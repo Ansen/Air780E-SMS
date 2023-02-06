@@ -1,5 +1,8 @@
 # Air780E-SMS
 
+1. 请先阅读**三遍**官方文档: [烧录教程](https://wiki.luatos.com/boardGuide/flash.html)
+2. 应该不再需要看我的教程了: [Air780e 短信转发](https://www.lshell.com/post/2023/air-780e-sms/)
+
 在更新日志中有提到
 
 > V1002已支持SMS中英文短信收发, 支持长短信自动合并. 但值得提醒的是, 电信卡不可用
