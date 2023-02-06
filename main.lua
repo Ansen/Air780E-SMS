@@ -21,8 +21,8 @@ socket.setDNS(nil, 2, "223.5.5.5")
 
 --缓存消息
 local buff = {}
--- bark_url 不支持 https, 官方 api 好像强制https
-bark_url = "https://api.day.app/push"
+-- bark_url 目前不支持 https，错误代码：-5，有请大佬修复
+bark_url = "http://api.day.app/push"
 bark_key = "换成你自己的"
 
 -- 辅助发送http请求, 因为http库需要在task里运行
