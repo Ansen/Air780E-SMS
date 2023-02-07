@@ -20,3 +20,7 @@
 # 感谢
 - [chenxuuu](https://github.com/chenxuuu)
 - [openLuat](https://github.com/openLuat)
+
+# 其它
+
+TG 频道和讨论群: https://t.me/openluat
