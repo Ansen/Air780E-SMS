@@ -1,7 +1,6 @@
 # Air780E-SMS
 
-
-> 目前发送https请求会直接报错，错误代码为：-5，有大佬能修复一下吗？
+> LuatOS 不支持 TLSv1.3
 
 1. 请先阅读**三遍**官方文档: [烧录教程](https://wiki.luatos.com/boardGuide/flash.html)
 2. 应该不再需要看我的教程了: [Air780e 短信转发](https://www.lshell.com/post/2023/air-780e-sms/)
