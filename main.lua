@@ -13,11 +13,17 @@ if wdt then
     wdt.init(9000)--初始化watchdog设置为9s
     sys.timerLoopStart(wdt.feed, 3000)--3s喂一次狗
 end
-log.info("main", "sms demo")
+log.info("main", "Air780E sms forwarder")
 
 --运营商给的dns经常抽风，手动指定
 socket.setDNS(nil, 1, "119.29.29.29")
 socket.setDNS(nil, 2, "223.5.5.5")
+
+-- 设置 SIM 自动恢复(单位: 毫秒), 搜索小区信息间隔(单位: 毫秒), 最大搜索时间(单位: 秒)
+mobile.setAuto(1000 * 10)
+
+-- 开启 IPv6
+mobile.ipv6(true)
 
 --缓存消息
 local buff = {}
@@ -25,7 +31,7 @@ local buff = {}
 bark_url = "https://api.day.app/push"
 bark_key = "换成你自己的"
 
--- 辅助发送http请求, 因为http库需要在task里运行
+-- 辅助发送http Post 请求, 因为http库需要在task里运行
 function http_post(url, headers, body)
     sys.taskInit(function()
         for i=1,10 do
@@ -40,12 +46,13 @@ function http_post(url, headers, body)
     end)
 end
 
+-- 短信转发
 function sms_handler(num, txt)
     -- num 手机号码
     -- txt 文本内容
     log.info("sms", num, txt, txt:toHex())
 
-    -- http演示1, 发json
+    -- httt Post 发送 json
     local body = json.encode({
         title=num, 
         body=txt,
